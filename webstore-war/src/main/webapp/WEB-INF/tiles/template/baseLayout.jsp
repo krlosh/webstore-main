@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<tiles:importAttribute name="javascripts"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,9 @@
 	rel="stylesheet">
 <link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css"
 	rel="stylesheet">
+<c:forEach var="script" items="${javascripts}">
+    <script src="<c:url value="${script}"/>"></script>
+</c:forEach>
 </head>
 <body>
 	<div class="container">

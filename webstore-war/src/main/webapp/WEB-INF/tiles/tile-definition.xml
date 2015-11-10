@@ -8,6 +8,8 @@
 			value="/WEB-INF/tiles/template/navigation.jsp" />
 		<put-attribute name="content" value="" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
+		<put-list-attribute name="javascripts">
+		</put-list-attribute>
 	</definition>	
 	<definition name="products" extends="baseLayout">
 		<put-attribute name="title" value="Products" />
@@ -20,6 +22,16 @@
 		<put-attribute name="heading" value="Products" />
 		<put-attribute name="tagline" value="Product" />
 		<put-attribute name="content" value="/WEB-INF/views/product.jsp" />
+	</definition>
+	<definition name="cart" extends="baseLayout">
+		<put-attribute name="title" value="Cart" />
+		<put-attribute name="heading" value="Cart" />
+		<put-attribute name="tagline" value="All the selected products in your cart" />
+		<put-attribute name="content" value="/WEB-INF/views/cart.jsp" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></add-attribute>
+			<add-attribute value="/resource/js/controllers.js"></add-attribute>
+		</put-list-attribute>
 	</definition>
 	<!--  similarly, add definition tags for every logical view name. I have skipped this here, but you can find the full definition file in the code bundle of this book.-->
 </tiles-definitions>
