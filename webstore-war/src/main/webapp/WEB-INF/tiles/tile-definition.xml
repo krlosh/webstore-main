@@ -33,5 +33,11 @@
 			<add-attribute value="/resource/js/controllers.js"></add-attribute>
 		</put-list-attribute>
 	</definition>
+		<definition name="customers" extends="baseLayout">
+		<put-attribute name="title" value="Customers" />
+		<put-attribute name="heading" value="Customers" />
+		<put-attribute name="tagline" value="All the available customers in our store" />
+		<put-attribute name="content" value="/WEB-INF/views/customers.jsp" />
+	</definition>
 	<!--  similarly, add definition tags for every logical view name. I have skipped this here, but you can find the full definition file in the code bundle of this book.-->
 </tiles-definitions>
