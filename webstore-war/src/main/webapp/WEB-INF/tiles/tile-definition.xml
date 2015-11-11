@@ -39,5 +39,11 @@
 		<put-attribute name="tagline" value="All the available customers in our store" />
 		<put-attribute name="content" value="/WEB-INF/views/customers.jsp" />
 	</definition>
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="Products" />
+		<put-attribute name="heading" value="Products" />
+		<put-attribute name="tagline" value="Add products" />
+		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+	</definition>
 	<!--  similarly, add definition tags for every logical view name. I have skipped this here, but you can find the full definition file in the code bundle of this book.-->
 </tiles-definitions>
