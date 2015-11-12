@@ -14,7 +14,7 @@
 		<transition to="collectCustomerId" />
 	</action-state>
 
-	<view-state id="collectCustomerId" model="order" view="collectCustomerId.jsp">
+	<view-state id="collectCustomerId" model="order" view="collectCustomerId">
 		<transition on="customerIdCollected" to="checkCustomerExist"/>
 	</view-state>
 	
