@@ -57,9 +57,45 @@
 	</definition>
 	<definition name="collectCustomerId" extends="baseLayout">
 		<put-attribute name="title" value="Customer" />
-		<put-attribute name="heading" value="Customer" />
+		<put-attribute name="heading" value="Checkout process" />
 		<put-attribute name="tagline" value="Customer search" />
-		<put-attribute name="content" value="/WEB-INF/flows/checkout/collectCustomerId.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/checkout/collectCustomerId.jsp" />
+	</definition>
+	<definition name="collectCustomerInfo" extends="baseLayout">
+		<put-attribute name="title" value="Customer" />
+		<put-attribute name="heading" value="Checkout process" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="content" value="/WEB-INF/views/checkout/collectCustomerInfo.jsp" />
+	</definition>
+	<definition name="checkOutCancelled" extends="baseLayout">
+		<put-attribute name="title" value="Customer" />
+		<put-attribute name="heading" value="Checkout process" />
+		<put-attribute name="tagline" value="Cancelation" />
+		<put-attribute name="content" value="/WEB-INF/views/checkout/checkOutCancelled.jsp" />
+	</definition>
+	<definition name="collectShippingDetail" extends="baseLayout">
+		<put-attribute name="title" value="Shipping Details" />
+		<put-attribute name="heading" value="Checkout process" />
+		<put-attribute name="tagline" value="Shipping" />
+		<put-attribute name="content" value="/WEB-INF/views/checkout/collectShippingDetail.jsp" />
+	</definition>
+	<definition name="InvalidCartWarning" extends="baseLayout">
+		<put-attribute name="title" value="Invalid Cart" />
+		<put-attribute name="heading" value="Checkout process" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="content" value="/WEB-INF/views/checkout/InvalidCartWarning.jsp" />
+	</definition>
+	<definition name="orderConfirmation" extends="baseLayout">
+		<put-attribute name="title" value="Order" />
+		<put-attribute name="heading" value="Checkout process" />
+		<put-attribute name="tagline" value="Order confirmation" />
+		<put-attribute name="content" value="/WEB-INF/views/checkout/orderConfirmation.jsp" />
+	</definition>
+	<definition name="thankCustomer" extends="baseLayout">
+		<put-attribute name="title" value="Thank you" />
+		<put-attribute name="heading" value="Checkout process" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="content" value="/WEB-INF/views/checkout/thankCustomer.jsp" />
 	</definition>
 	<!--  similarly, add definition tags for every logical view name. I have skipped this here, but you can find the full definition file in the code bundle of this book.-->
 </tiles-definitions>

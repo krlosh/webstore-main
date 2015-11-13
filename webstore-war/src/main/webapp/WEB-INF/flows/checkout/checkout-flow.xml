@@ -23,7 +23,7 @@
 			then="searchCustomer" else="collectCustomerInfo" />
 	</decision-state>
 
-	<view-state id="collectCustomerInfo" view="collectCustomerInfo.jsp"
+	<view-state id="collectCustomerInfo" view="collectCustomerInfo"
 		model="order">
 		<transition on="customerInfoCollected" to="saveCustomer" />
 	</view-state>
@@ -65,7 +65,7 @@
 
 	<end-state id="endState" />
 
-	<end-state id="cancelCheckout" view="checkOutCancelled.jsp" />
+	<end-state id="cancelCheckout" view="checkOutCancelled" />
 	
 	<global-transitions>
 		<transition on="cancel" to="endState" />
