@@ -1,0 +1,2 @@
+insert into ProductVO (productId,name,unitPrice, description,category, manufacturer, unitsInStock ) 
+values ("P1234", "iPhone 5s",500,"Apple iPhone 5s smartphone with 4.00-inch 640x1136 display and 8-megapixel rear camera","Smart Phone", "Apple", 1000)

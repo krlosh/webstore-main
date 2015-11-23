@@ -25,6 +25,11 @@
 		<version>${slf4j.version}</version>
 		<scope>compile</scope>
 	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>4.3.1.Final</version>
+	</dependency>
   </dependencies>
   <modules>
     <module>webstore-persistence</module>

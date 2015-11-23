@@ -48,7 +48,7 @@ public class ProductController {
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder) {
 		//binder.setDisallowedFields("unitsInOrder", "discontinued");//Estos campos no se inicializan desde el formulario
-		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "productImage","condition","language");
+		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "productImage","productManual","condition","language");
 		//Los custom editors permiten hacer mapeos mucho más avanzados, por ejemplo para fechas,... 
 		DateFormat dateFormat = new SimpleDateFormat("MMM d, YYYY");   
 		CustomDateEditor orderDateEditor = new CustomDateEditor(dateFormat, true);  
