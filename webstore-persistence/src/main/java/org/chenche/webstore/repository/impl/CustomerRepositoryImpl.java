@@ -29,7 +29,6 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		return this.entityManager.createQuery("SELECT c from Customer c",Customer.class).getResultList();
 	}
 
-	@Transactional
 	public void saveCustomer(Customer customer) {
 		this.entityManager.persist(customer);
 

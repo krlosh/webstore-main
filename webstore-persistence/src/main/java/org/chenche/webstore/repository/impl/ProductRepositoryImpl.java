@@ -126,7 +126,6 @@ public class ProductRepositoryImpl implements ProductRepository {
 		return setPvo;
 	}
 
-	@Transactional
 	@Override
 	public void addProduct(ProductVO p) {
 		this.entityManager.persist(p);

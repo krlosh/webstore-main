@@ -54,7 +54,7 @@ public class ProductVO {
 	@Column
 	private boolean discontinued;
 	
-	@Column
+	@Column(name="condicion")
 	private String condition;
 	
 	public ProductVO(){
