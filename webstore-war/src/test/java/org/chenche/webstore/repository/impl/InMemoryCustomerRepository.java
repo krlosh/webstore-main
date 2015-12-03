@@ -9,7 +9,7 @@ import org.chenche.webstore.domain.Customer;
 import org.chenche.webstore.repository.CustomerRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
 public class InMemoryCustomerRepository implements CustomerRepository {
 
 	@Override

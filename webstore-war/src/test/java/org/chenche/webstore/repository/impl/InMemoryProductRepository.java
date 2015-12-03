@@ -12,7 +12,7 @@ import org.chenche.webstore.exception.ProductNotFoundException;
 import org.chenche.webstore.repository.ProductRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
 public class InMemoryProductRepository implements ProductRepository {
 
 	private List<ProductVO> listOfProducts = new ArrayList<ProductVO>();

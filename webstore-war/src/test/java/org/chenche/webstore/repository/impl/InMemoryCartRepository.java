@@ -3,21 +3,21 @@ package org.chenche.webstore.repository.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.chenche.webstore.domain.Cart;
+import org.chenche.webstore.domain.CartVO;
 import org.chenche.webstore.repository.CartRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
 public class InMemoryCartRepository implements CartRepository{
 
-	private Map<String, Cart> listOfCarts;
+	private Map<String, CartVO> listOfCarts;
 	
 	public InMemoryCartRepository() {
-	    listOfCarts = new HashMap<String,Cart>();
+	    listOfCarts = new HashMap<String,CartVO>();
 	 }
 	
 	@Override
-	public Cart create(Cart cart) {
+	public CartVO create(CartVO cart) {
 		if (listOfCarts.containsKey(cart.getCartId())){
 			throw new IllegalArgumentException(String.format("Can not create cart. A cart with the give id (%) already exists", cart.getCartId()));
 		}
@@ -26,12 +26,12 @@ public class InMemoryCartRepository implements CartRepository{
 	}
 
 	@Override
-	public Cart read(String cartId) {
+	public CartVO read(String cartId) {
 		return listOfCarts.get(cartId);
 	}
 
 	@Override
-	public void update(String cartId, Cart cart) {
+	public void update(String cartId, CartVO cart) {
 		if(!listOfCarts.containsKey(cartId)){
 			throw new IllegalArgumentException(String.format("Can not update cart. A cart with the give id (%) does not exist exists", cartId));
 		}

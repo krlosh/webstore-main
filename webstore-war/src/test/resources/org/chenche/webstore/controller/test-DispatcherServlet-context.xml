@@ -34,4 +34,16 @@
 	
 	<bean id="unitsInStockValidator" class="org.chenche.webstore.validator.UnitsInStockValidator">
 	</bean>
+	
+	<!-- Repository mocks comentar / descomentar si necesario
+	<bean id="cartRepositoryImpl" class="org.chenche.webstore.repository.impl.InMemoryCartRepository">
+	</bean>
+	
+	<bean id="customerRepositoryImpl" class="org.chenche.webstore.repository.impl.InMemoryCustomerRepository">
+	</bean>
+	
+	<bean id="productRepositoryImpl" class="org.chenche.webstore.repository.impl.InMemoryProductRepository">
+	</bean>
+	
+	 fin repository mocks -->
 </beans>

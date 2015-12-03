@@ -18,7 +18,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("test-DispatcherServlet-context.xml")
+@ContextConfiguration(locations={"test-DispatcherServlet-context.xml",
+								"classpath:spring.xml"})
 @WebAppConfiguration
 public class CartRESTControllerTest extends CartRESTController {
 
@@ -38,6 +39,10 @@ public class CartRESTControllerTest extends CartRESTController {
 	public void testReadCorrectJSON() throws Exception{
 		this.mockMvc.perform(put("/rest/cart/add/P1234").session(session))
 					.andExpect(status().is(204));
+		
+		this.mockMvc.perform(put("/rest/cart/add/P1234").session(session))
+		.andExpect(status().is(204));
+		
 		//Act     
 		this.mockMvc.perform(get("/rest/cart/"+ session.getId()).session(session))
 			.andExpect(status().isOk())
