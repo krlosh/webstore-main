@@ -21,4 +21,6 @@ public interface ProductRepository {
 	public Set<ProductVO> getProductsByPriceFilter(Map<String, List<String>> filterParams);
 	
 	void addProduct(ProductVO p);
+	
+	public void updateProduct(ProductVO p);
 }

@@ -34,6 +34,7 @@
 									</tbody>
 								</table>
 								</address>
+							</div>
 								<address>
 								<strong>Billing Address</strong> <br>
 								<table>
@@ -51,7 +52,30 @@
 									</tbody>
 								</table>
 								</address>
-								<!--  Similarly, furnish every field of the order object within an html table using expression notation "$ { }". I have skipped those tags here -->
+								<table class="table table-bordered">
+									<tbody>
+										<tr>
+											<th>Product</th>
+											<th>Unit price</th>
+											<th>Quantity</th>
+											<th>Price</th>
+										</tr>
+										<c:forEach items="${order.cart.cartItems.values()}" var="item">
+										<tr>
+											<td>${item.product.productId} - ${item.product.name}</td>
+											<td>${item.product.unitPrice}</td>
+											<td>${item.quantity}</td>
+											<td>${item.totalPrice}</td>
+										</tr>
+										</c:forEach>
+										<tr>
+											<th></th>
+											<th></th>
+											<th>Grand Total</th>
+											<th>${order.cart.grandTotal}</th>
+										</tr>	
+									</tbody>
+								</table>
 								<button id="back" class="btn btn-default"
 									name="_eventId_backToCollectShippingDetail">Back</button>
 								<button type="submit" class="btn btn-success"

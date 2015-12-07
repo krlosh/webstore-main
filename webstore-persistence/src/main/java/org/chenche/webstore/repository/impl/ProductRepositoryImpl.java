@@ -131,4 +131,10 @@ public class ProductRepositoryImpl implements ProductRepository {
 		this.entityManager.persist(p);
 	}
 
+	@Override
+	public void updateProduct(ProductVO p) {
+		this.entityManager.merge(p);
+	}
+
+	
 }

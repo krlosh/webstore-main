@@ -1,5 +1,7 @@
 package org.chenche.webstore.service.impl;
 
+import javax.transaction.Transactional;
+
 import org.chenche.webstore.domain.Order;
 import org.chenche.webstore.domain.ProductVO;
 import org.chenche.webstore.repository.OrderRepository;
@@ -21,6 +23,9 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private CartService cartService;
 	
+	
+	@Override
+	@Transactional
 	public void processOrder(String productId, int quantity) {
 		ProductVO productById=this.productRepository.getProductById(productId);
 		
@@ -29,9 +34,11 @@ public class OrderServiceImpl implements OrderService {
 		}
 		
 		productById.setUnitsInStock(productById.getUnitsInStock() - quantity);
+		this.productRepository.updateProduct(productById);
 	}
 
 	@Override
+	@Transactional
 	public Long saveOrder(Order order) {
 		Long orderId = this.orderRepository.saveOrder(order);
 		cartService.delete(order.getCart().getCartId());

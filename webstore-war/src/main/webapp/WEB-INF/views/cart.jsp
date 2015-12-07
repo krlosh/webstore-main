@@ -13,7 +13,7 @@
 			<tr>
 				<th>Product</th>
 				<th>Unit price</th>
-				<th>Qauntity</th>
+				<th>Quantity</th>
 				<th>Price</th>
 				<th>Action</th>
 			</tr>

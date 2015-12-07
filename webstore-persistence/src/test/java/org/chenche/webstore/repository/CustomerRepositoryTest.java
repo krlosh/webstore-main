@@ -1,6 +1,9 @@
 package org.chenche.webstore.repository;
 
 import static org.junit.Assert.fail;
+
+import javax.transaction.Transactional;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
@@ -10,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("/spring.xml")
@@ -36,6 +40,7 @@ public class CustomerRepositoryTest {
 	}
 	
 	@Test
+	@Rollback(value=false)
 	public void testGetAllCustomers() {
 		initializeDB();
 		try{
@@ -48,6 +53,8 @@ public class CustomerRepositoryTest {
 	}
 
 	@Test
+	@Rollback(value=false)
+	@Transactional
 	public void testSaveCustomer() {
 		initializeDB();
 		try{

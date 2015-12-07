@@ -49,8 +49,12 @@ public class CartRepositoryImpl implements CartRepository {
 
 	@Override
 	public void delete(String cartId) {
-		// TODO Auto-generated method stub
-
+		CartVO alreadyCreated = this.read(cartId);
+		if(alreadyCreated==null){
+			throw new IllegalArgumentException(String.format("Can not delete cart. A cart with the give id %s does not exist exists", cartId));
+		}
+		
+		this.entityManager.remove(alreadyCreated);
 	}
 
 }

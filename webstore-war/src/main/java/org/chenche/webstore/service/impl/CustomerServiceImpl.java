@@ -2,6 +2,8 @@ package org.chenche.webstore.service.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.chenche.webstore.domain.Customer;
 import org.chenche.webstore.repository.CustomerRepository;
 import org.chenche.webstore.service.CustomerService;
@@ -19,6 +21,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
+	@Transactional
 	public void saveCustomer(Customer customer) {
 		this.customerRepository.saveCustomer(customer);
 	}
@@ -29,6 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
+	@Transactional
 	public Customer getCustomer(String customerId) {
 		return this.customerRepository.getCustomer(customerId);
 	}

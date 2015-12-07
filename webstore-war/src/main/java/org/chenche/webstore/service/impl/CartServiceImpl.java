@@ -73,6 +73,7 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
+	@Transactional
 	public Cart validate(String cartId) {
 		CartVO cart = cartRepository.read(cartId);
 		if (cart == null/* ||cart.getCartItems().size()==0 */) {

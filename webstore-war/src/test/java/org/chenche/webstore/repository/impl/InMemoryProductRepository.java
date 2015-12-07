@@ -144,5 +144,12 @@ public class InMemoryProductRepository implements ProductRepository {
 	public void addProduct(ProductVO p) {
 		this.listOfProducts.add(p);
 	}
+
+	@Override
+	public void updateProduct(ProductVO p) {
+		ProductVO ptoRemove = this.getProductById(p.getProductId());
+		this.listOfProducts.remove(ptoRemove);
+		this.listOfProducts.add(p);
+	}
 	
 }
