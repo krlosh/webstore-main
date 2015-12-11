@@ -19,7 +19,8 @@ public class OrderRepositoryImpl implements OrderRepository {
 	
 	@Override
 	public Long saveOrder(OrderVO order) {
-		this.entityManager.persist(order);
+		OrderVO mergedOrder = this.entityManager.merge(order);
+		order=mergedOrder;
 		logger.info("Order saved "+order.getOrderId());
 		return order.getOrderId();
 	}

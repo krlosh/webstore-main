@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -23,14 +24,14 @@ public class OrderVO {
 	@Column
 	private long orderId;
 	
-	@OneToOne(optional=false,cascade=CascadeType.PERSIST)
+	@ManyToOne(optional=false,cascade=CascadeType.PERSIST)
 	private Customer customer;
 	
 	@Column
 	@NotNull
 	private Date shippingDate;
 	
-	@OneToOne(optional=false,cascade=CascadeType.PERSIST)
+	@OneToOne(optional=false,cascade=CascadeType.MERGE)
 	private Address shippingAddress;
 	
 	@OneToMany(cascade=CascadeType.ALL,orphanRemoval=true)
