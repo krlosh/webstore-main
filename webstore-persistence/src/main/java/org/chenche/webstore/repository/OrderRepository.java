@@ -1,7 +1,7 @@
 package org.chenche.webstore.repository;
 
-import org.chenche.webstore.domain.Order;
+import org.chenche.webstore.domain.OrderVO;
 
 public interface OrderRepository {
-	Long saveOrder(Order order);
+	Long saveOrder(OrderVO order);
 }

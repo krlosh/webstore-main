@@ -3,6 +3,7 @@ package org.chenche.webstore.service.impl;
 import javax.transaction.Transactional;
 
 import org.chenche.webstore.domain.Order;
+import org.chenche.webstore.domain.OrderVO;
 import org.chenche.webstore.domain.ProductVO;
 import org.chenche.webstore.repository.OrderRepository;
 import org.chenche.webstore.repository.ProductRepository;
@@ -37,10 +38,13 @@ public class OrderServiceImpl implements OrderService {
 		this.productRepository.updateProduct(productById);
 	}
 
+	private OrderVO translateFromOrder(Order order){
+		return new OrderVO();
+	}
 	@Override
 	@Transactional
 	public Long saveOrder(Order order) {
-		Long orderId = this.orderRepository.saveOrder(order);
+		Long orderId = this.orderRepository.saveOrder(this.translateFromOrder(order));
 		cartService.delete(order.getCart().getCartId());
 		return orderId;
 	}
